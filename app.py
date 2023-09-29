@@ -1,12 +1,17 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/notifyMe', methods=['GET'])
 def hello_world():
-    html_content = "<html><body><h1>Bem vindos!O Que Ver Hoje?</h1></body><span>Encontraremos aqui Diversos filtros e dicas do que ver hoje</span></html>"
-
-    return html_content
+    json_content = {"message": "Bem-vindo",
+                     "content":"Utilize o O Que Ver Agora?"    }
+    return jsonify(json_content)
 
 if __name__ == '__main__':
     app.run()
+
+#comentario em python
+"""
+comentario de um bloco em python
+"""
